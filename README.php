@@ -1,2 +1,6 @@
 <?php
 echo "salom";
+
+for ($i=0; $i <=10 ; $i++) { 
+            echo "muhammaddamin aka nima gap";
+        }
