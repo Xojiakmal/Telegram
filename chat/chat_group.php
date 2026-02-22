@@ -9,17 +9,17 @@ $my_id = chek_session('my_id', 'index.php');
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $whom_id = $_SESSION['whom_id'] = $_GET['id'];
     
-    $stmt = $pdo->prepare("SELECT `name` FROM `users` WHERE `id`=?");
+    $stmt = $pdo->prepare("SELECT `group_name` FROM `groups` WHERE `id`=?");
     $stmt->execute([$whom_id]);
     $res = $stmt->fetch();
     
-    add_contacts($pdo, $my_id, $whom_id, 'user');
+    add_contacts($pdo, $my_id, $whom_id, 'group');
 
 }
 elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $token = rand(10000, 99999);
+    $token = rand(100000, 999999);
     $_SESSION['form_token'] = $token;
-    $whom_id = $_SESSION['whom'];
+    $whom_id = $_SESSION['whom_id'];
     if($_POST['textarea'] !== null){
         $textarea = $_POST['textarea'];
         header("Location: send_message.php?form_token=$token&text=$textarea");
@@ -40,12 +40,12 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Document</title>
 </head>
 <body>
-    <h1><?=$res['name']?></h1>
+    <h1><?=$res['group_name']?></h1>
     <form action="<?=$_SERVER['PHP_SELF']?>" method='POST' enctype="multipart/form-data">
         <input type="file" name="file" id="">
         <textarea name="textarea"></textarea>
         <input type="submit" value="Yuborish"><br>
-        <a href="show_users.php?where=users">Back</a>
+        <a href="show_users.php?where=groups">Back</a>
     </form>
 </body>
 </html>
