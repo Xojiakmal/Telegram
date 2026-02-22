@@ -50,13 +50,20 @@ function create_tables($conn, $table_name, $cols){
         }
     }
     $query.=")";
-    $conn->query($query); 
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
 }
 $tables_type_data = [
-    'informations'=>['message'=>['type'=>'text'], 'users_id'=>['type'='json'], 'file'=>['type'=>'file', 'null'=>true]],
+    'informations'=>['message'=>['type'=>'text'], 'users_id'=>['type'=>'json'], 'file'=>['type'=>'file', 'null'=>true]],
     'notes'=>['text'=>['type'=>'text', 'null'=>true], 'file'=>['type'=>'file', 'null'=>true], 'user_id'=>['type'=>'int'], 'to_whom'=>['type'=>'int'], 'reply'=>['type'=>'json', 'null'=>true], 'create_at'=>['type'=>'date_stamp'], 'update_at'=>['type'=>'date_time']],
     'send_data'=>['message_id'=>['type'=>'int'], 'send_time'=>['type'=>'date_time'], 'sended'=>['type'=>'int']],
     'users'=>['name'=>['type'=>'varchar', 'varchar'=>70], 'yosh'=>['type'=>'int'], 'tel'=>['type'=>'varchar', 'varchar'=>14], 'millat'=>['type'=>'text'], 'jins'=>['type'=>'varchar', 'varchar'=>6], 'other'=>['type'=>'json']],
     'users_affinities'=>['user_id'=>['type'=>'int'], 'groups_id'=>['type'=>'json', 'null'=>true], 'users_id'=>['type'=>'json', 'null'=>true], 'channels_id'=>['type'=>'json', 'null'=>true]],
-    'groups'=>['group_name'=>['type'=>'varchar', 'varchar'=10], 'author_id'=>['type'=>'int'], 'admins'=>['type'=>'json'], 'type'=>['type'=>'varchar', 'varchar'=>255], 'izoh'=>['type'=>'text'], 'link'=>['type'=>'text']]
+    'groups'=>['group_name'=>['type'=>'varchar', 'varchar'=>255], 'author_id'=>['type'=>'int'], 'admins'=>['type'=>'json', 'null'=>true], 'type'=>['type'=>'varchar', 'varchar'=>10], 'izoh'=>['type'=>'text'], 'link'=>['type'=>'text'], 'file'=>['type'=>'file', 'null'=>true]],
+    'channels'=>['channel_name'=>['type'=>'varchar', 'varchar'=>255], 'author_id'=>['type'=>'int'], 'admins'=>['type'=>'json', 'null'=>true], 'type'=>['type'=>'varchar', 'varchar'=>10], 'izoh'=>['type'=>'text'], 'link'=>['type'=>'text'], 'file'=>['type'=>'file', 'null'=>true]]
 ];
+
+// include "../texnic/conn.php";
+// foreach ($tables_type_data as $k => $v) {
+//     create_tables($pdo, $k, $v);
+// }

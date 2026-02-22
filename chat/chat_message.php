@@ -19,10 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $token = rand(10000, 99999);
     $_SESSION['form_token'] = $token;
-    $whom_id = $_SESSION['whom'];
     if($_POST['textarea'] !== null){
-        $textarea = $_POST['textarea'];
-        header("Location: send_message.php?form_token=$token&text=$textarea");
+        $_SESSION['user_data'] = $_POST['textarea'];
+        header("Location: send_message.php?form_token=$token&text=true");
         exit;
     }
     else {

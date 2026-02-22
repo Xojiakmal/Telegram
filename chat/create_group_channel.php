@@ -22,9 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($resurse['name'] == 'Group') {
         $data['table'] = 'groups';
+        $data['cols'] = 'group_name';
     }
     elseif ($resurse['name'] == 'Channel') {
         $data['table'] = 'channels';
+        $data['cols'] = 'channel_name';
     }
     $data['izoh'] = $_POST['izoh'] ?? 'None';
 
@@ -34,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $chek_name = $chek_row_name->fetch();
 
         if (empty($chek_name)) {
-            $add_row_stmt = $pdo->prepare("INSERT INTO `".$data['table']."`(`group_name`, `author_id`, `types`, `izoh`, `link`) VALUES (:name, :auid, :type, :iz, :li)");
+            $add_row_stmt = $pdo->prepare("INSERT INTO `".$data['table']."`(`".$data['cols']."`, `author_id`, `types`, `izoh`, `link`) VALUES (:name, :auid, :type, :iz, :li)");
             if ($add_row_stmt->execute([':name'=>$data['name'], ':auid'=>$my_id, ':type'=>$data['type'], ':iz'=>$data['izoh'], ':li'=>$data['link']])) {
                 $get_row_stmt = $pdo->prepare("SELECT `id` FROM `".$data['table']."` WHERE `link`=:a");
                 $get_row_stmt->execute([':a'=>$data['link']]);

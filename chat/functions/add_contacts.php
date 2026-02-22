@@ -81,7 +81,6 @@ function add_contacts($pdo, $my_id, $whom_id, $type=null) {
 
         $change_query = "UPDATE `users_affinities` SET `".$resurse['colum']."`=:f WHERE `user_id`=:s";
 
-        print_r($writed_from_data[$resurse['colum']]);
         $change_from_data = $pdo->prepare($change_query);
         $change_from_data->execute([':f'=>$writed_from_data[$resurse['colum']], ':s'=>$my_id]);
     }
