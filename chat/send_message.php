@@ -31,6 +31,11 @@ if ((isset($_GET['form_token']))) {
         $query = "INSERT INTO notes(text, user_id, to_whom) VALUES (?, ?, ?)";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$text, $from_id, $whom_type.$to_id]);
+
+        $query = "SELECT `id` FROM `notes` WHERE `text`=? AND `user_id`=? AND `to_whom`=?";
+        $get_id_stmt = $pdo->prepare($query);
+        $get_id_stmt->execute([$text, $from_id, $whom_type.$to_id]);
+        $get_id_data = $get_id_stmt->fetch();
     }
     elseif (isset($_GET['file'])) {
         $image_type = ['jpg', 'jpeg', 'png','web','gif'];
@@ -68,8 +73,39 @@ if ((isset($_GET['form_token']))) {
             if($file_insert->execute([$file_path, $from_id, $whom_type.$to_id])){
                 echo "File yuklandi";
             }
+
+            $query = "SELECT `id` FROM `notes` WHERE `text`=? AND `user_id`=? AND `to_whom`=?";
+            $get_id_stmt = $pdo->prepare($query);
+            $get_id_stmt->execute([$file_path, $from_id, $whom_type.$to_id]);
+            $get_id_data = $get_id_stmt->fetch();
         }
     }
+    if (isset($_GET['reply'])) {
+        $relpy_id = $_SESSION['reply_id'];
+        $query = "SELECT `reply` FROM `notes` WHERE id=?";
+
+        $reply_edit_stmt = $pdo->prepare($query);
+        $reply_edit_stmt->execute([$relpy_id]);
+        $reply_edit_data = $reply_edit_stmt->fetch();
+
+        if (!empty($reply_edit_data['reply'])) {
+            $reply_edit_data['reply'] = json_decode($reply_edit_data['reply'], true);
+            
+            if (!in_array($get_id_data[0], $reply_edit_data['reply'])) {
+                $reply_edit_data['reply'][] = $get_id_data[0];
+                $reply_edit_data['reply'] = json_encode($reply_edit_data['reply']);
+            }
+            else {
+                $reply_edit_data['reply'] = json_encode($reply_edit_data['reply']);
+            }
+        }
+        else {
+            $reply_edit_data['reply'][] = $get_id_data[0];
+            $reply_edit_data['reply'] = json_encode($reply_edit_data['reply']);
+        }
+        $query = "UPDATE `notes` SET `reply`=? WHERE `id`=?";
+        $reply_edit_stmt = $pdo->prepare($query);
+        $reply_edit_stmt->execute([$reply_edit_data, $relpy_id]);
+    }
     header("Location:".$resurse['file']."?id=".$to_id);
-    // }
 }

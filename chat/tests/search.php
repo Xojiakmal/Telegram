@@ -1,5 +1,5 @@
 <?php
-include "texnic/conn.php";
+// include "texnic/conn.php";
 
 // $text = '234';
 // $query = "SELECT `id`, `tel` FROM `users` WHERE `tel` LIKE '%".$text."%'";
@@ -49,4 +49,18 @@ include "texnic/conn.php";
 //     // echo $final;
 //     print_r($new_sim);
 // }
+
+// try {
+//     // print_r(file_get_contents('users_files/images/search.php'));
+//     if (file_get_contents('users_files/images/search.php')) {
+
+//     }
+// } catch (Exception $th) {
+//     echo $th->getMessage();
+// }
+var_dump(file_exists('../users_files/images/index.txt'));
+
+// throw new Exception("Error Processing Request", );
+
+
 ?>

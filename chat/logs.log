@@ -1,0 +1,283 @@
+2026-03-05 12:30:38 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 12:30:38 - {"groups_id":"[\"6\", \"19\"]","0":"[\"6\", \"19\"]"} | {GET} |
+2026-03-05 12:30:38 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=? OR `id`=? | {SET} |
+2026-03-05 12:30:38 - [{"id":"6","group_name":"Xojiakmal","link":"JasminXojiakmal7652594"},{"id":"19","group_name":"Abd","link":"AliAbd3986541"}] | {GET} |
+2026-03-05 12:30:38 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 12:30:38 - [{"id":"19"}] | {GET} |
+2026-03-05 12:30:45 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 12:30:45 - {"groups_id":"[\"6\", \"19\"]","0":"[\"6\", \"19\"]"} | {GET} |
+2026-03-05 12:30:45 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=? OR `id`=? | {SET} |
+2026-03-05 12:30:45 - [{"id":"6","group_name":"Xojiakmal","link":"JasminXojiakmal7652594"},{"id":"19","group_name":"Abd","link":"AliAbd3986541"}] | {GET} |
+2026-03-05 12:30:45 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 12:30:45 - [{"id":"19"}] | {GET} |
+2026-03-05 12:30:59 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 12:30:59 - {"groups_id":"[\"6\", \"19\"]","0":"[\"6\", \"19\"]"} | {GET} |
+2026-03-05 12:30:59 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=? OR `id`=? | {SET} |
+2026-03-05 12:30:59 - [{"id":"6","group_name":"Xojiakmal","link":"JasminXojiakmal7652594"},{"id":"19","group_name":"Abd","link":"AliAbd3986541"}] | {GET} |
+2026-03-05 12:30:59 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 12:30:59 - [{"id":"19"}] | {GET} |
+2026-03-05 12:31:02 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 12:31:02 - {"group_name":"Xojiakmal","0":"Xojiakmal"} | {GET} |
+2026-03-05 12:31:02 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 12:31:02 - [{"id":"4","text":"dnckdnfks","file":null,"user_id":"6"},{"id":"5","text":"kjfnvdkfnvkdf","file":null,"user_id":"6"},{"id":"6","text":"a","file":null,"user_id":"6"}] | {GET} |
+2026-03-05 12:31:11 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 12:31:11 - {"group_name":"Xojiakmal","0":"Xojiakmal"} | {GET} |
+2026-03-05 12:31:11 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 12:31:11 - [{"id":"4","text":"dnckdnfks","file":null,"user_id":"6"},{"id":"5","text":"kjfnvdkfnvkdf","file":null,"user_id":"6"},{"id":"6","text":"a","file":null,"user_id":"6"}] | {GET} |
+2026-03-05 14:45:34 - SELECT `id`, `name` FROM `users` | {SET} |
+2026-03-05 14:45:34 - [{"id":"1","name":"Ali"},{"id":"2","name":"Dilshod"},{"id":"3","name":"Malika"},{"id":"4","name":"Jasmin"},{"id":"5","name":"Bekzod"},{"id":"6","name":"Sardor"},{"id":"7","name":"Zarina"},{"id":"8","name":"Ali"},{"id":"9","name":"Malika"},{"id":"10","name":"Bekzod"}] | {GET} |
+2026-03-05 14:46:07 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:46:07 - {"users_id":null,"0":null} | {GET} |
+2026-03-05 14:46:09 - SELECT `channels_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:46:09 - {"channels_id":null,"0":null} | {GET} |
+2026-03-05 14:46:09 - SELECT `id` FROM `channels` WHERE `author_id`=? | {SET} |
+2026-03-05 14:46:09 - [] | {GET} |
+2026-03-05 14:46:12 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:46:12 - {"groups_id":null,"0":null} | {GET} |
+2026-03-05 14:46:12 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 14:46:12 - [] | {GET} |
+2026-03-05 14:46:31 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:46:31 - {"users_id":null,"0":null} | {GET} |
+2026-03-05 14:47:16 - SELECT `id`, `name`, `tel` FROM `users` WHERE `tel` LIKE '%' :t  | {SET} |
+2026-03-05 14:47:16 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 14:47:17 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:47:17 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:47:17 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:47:17 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:47:17 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:47:17 - [] | {GET} |
+2026-03-05 14:47:36 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:47:36 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:47:36 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:47:36 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:47:36 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:47:36 - [] | {GET} |
+2026-03-05 14:54:42 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:54:42 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:54:42 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:54:42 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:54:42 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:54:42 - [] | {GET} |
+2026-03-05 14:54:47 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:54:47 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:54:47 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:54:47 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:54:47 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:54:47 - [] | {GET} |
+2026-03-05 14:54:55 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:54:55 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:54:55 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:54:55 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:54:55 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:54:55 - [] | {GET} |
+2026-03-05 14:55:14 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:55:14 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:55:14 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:14 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:14 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:55:14 - [] | {GET} |
+2026-03-05 14:55:19 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:55:19 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:55:19 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:19 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:19 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:55:19 - [{"id":"31","text":"salom","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:55:39 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:55:39 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:55:39 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:39 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:39 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:55:39 - [{"id":"31","text":"salom","file":null,"user_id":"3"},{"id":"32","text":"qonday\r\n\r\n\r\n\r\na","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:55:52 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:55:52 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:55:52 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:52 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:55:52 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:55:52 - [{"id":"31","text":"salom","file":null,"user_id":"3"},{"id":"32","text":"qonday\r\n\r\n\r\n\r\na","file":null,"user_id":"3"},{"id":"33","text":"","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:56:54 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:56:54 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:56:54 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:56:54 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:56:54 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:56:54 - [{"id":"31","text":"salom","file":null,"user_id":"3"},{"id":"32","text":"qonday\r\n\r\n\r\n\r\na","file":null,"user_id":"3"},{"id":"33","text":"","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:56:54 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:56:54 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:56:54 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:56:54 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:56:54 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:56:54 - [{"id":"31","text":"salom","file":null,"user_id":"3"},{"id":"32","text":"qonday\r\n\r\n\r\n\r\na","file":null,"user_id":"3"},{"id":"33","text":"","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:56:55 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:56:55 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:56:55 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:56:55 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:56:55 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:56:55 - [{"id":"31","text":"salom","file":null,"user_id":"3"},{"id":"32","text":"qonday\r\n\r\n\r\n\r\na","file":null,"user_id":"3"},{"id":"33","text":"","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:57:01 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:57:01 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:57:01 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:57:01 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:57:01 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:57:01 - [{"id":"31","text":"salom","file":null,"user_id":"3"},{"id":"32","text":"qonday\r\n\r\n\r\n\r\na","file":null,"user_id":"3"},{"id":"33","text":"","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:57:01 - SELECT `name` FROM `users` WHERE `id`=? | {SET} |
+2026-03-05 14:57:01 - {"name":"Dilshod","0":"Dilshod"} | {GET} |
+2026-03-05 14:57:01 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:57:01 - UPDATE `users_affinities` SET `users_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:57:01 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:57:01 - [{"id":"31","text":"salom","file":null,"user_id":"3"},{"id":"32","text":"qonday\r\n\r\n\r\n\r\na","file":null,"user_id":"3"},{"id":"33","text":"","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 14:57:37 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:57:37 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 14:57:37 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 14:57:37 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 14:58:06 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:58:06 - {"groups_id":null,"0":null} | {GET} |
+2026-03-05 14:58:06 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 14:58:06 - [] | {GET} |
+2026-03-05 14:58:57 - SELECT `id` FROM `groups` WHERE `group_name`=? OR `link`=? | {SET} |
+2026-03-05 14:58:57 - [{"id":"13","0":"13"}] | {GET} |
+2026-03-05 14:59:14 - SELECT `id` FROM `groups` WHERE `group_name`=? OR `link`=? | {SET} |
+2026-03-05 14:59:14 - [] | {GET} |
+2026-03-05 14:59:14 - INSERT INTO `groups`(`group_name`, `author_id`, `types`, `izoh`, `link`, `file`) VALUES (:name, :auid, :type, :iz, :li, :fi) | {SET} |
+2026-03-05 14:59:14 - SELECT `id` FROM `groups` WHERE `link`=:a | {SET} |
+2026-03-05 14:59:14 - {"id":"20","0":"20"} | {GET} |
+2026-03-05 14:59:14 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 14:59:14 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 14:59:14 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:59:14 - {"groups_id":null,"0":null} | {GET} |
+2026-03-05 14:59:14 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:59:14 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:59:14 - [] | {GET} |
+2026-03-05 14:59:21 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 14:59:21 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 14:59:21 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 14:59:21 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 14:59:21 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 14:59:21 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 14:59:21 - [] | {GET} |
+2026-03-05 15:01:15 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:01:15 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:01:15 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:01:15 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:01:15 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:01:15 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:01:15 - [] | {GET} |
+2026-03-05 15:01:19 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:01:19 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:01:19 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:01:19 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:01:19 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:01:19 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:01:19 - [] | {GET} |
+2026-03-05 15:02:31 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:02:31 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:02:31 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:02:31 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:02:31 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:02:31 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:02:31 - [{"id":"34","text":null,"file":null,"user_id":"3"},{"id":"35","text":"Salom\r\n","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 15:02:57 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:02:57 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:02:57 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:02:57 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:02:57 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:02:57 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:02:57 - [{"id":"34","text":null,"file":null,"user_id":"3"},{"id":"35","text":"Salom\r\n","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 15:02:57 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:02:57 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:02:57 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:02:57 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:02:57 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:02:57 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:02:57 - [{"id":"34","text":null,"file":null,"user_id":"3"},{"id":"35","text":"Salom\r\n","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 15:02:57 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:02:57 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:02:57 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:02:57 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:02:57 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:02:57 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:02:57 - [{"id":"34","text":null,"file":null,"user_id":"3"},{"id":"35","text":"Salom\r\n","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 15:03:04 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:03:04 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:03:04 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:03:04 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:03:04 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:03:04 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:03:04 - [{"id":"34","text":null,"file":null,"user_id":"3"},{"id":"35","text":"Salom\r\n","file":null,"user_id":"3"},{"id":"36","text":"Salomat","file":null,"user_id":"3"}] | {GET} |
+2026-03-05 15:05:09 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:05:09 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:05:09 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=?  | {SET} |
+2026-03-05 15:05:09 - [{"id":"20","group_name":"Hi","link":"hi"}] | {GET} |
+2026-03-05 15:05:09 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 15:05:09 - [{"id":"20"}] | {GET} |
+2026-03-05 15:05:53 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:05:53 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 15:05:53 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 15:05:53 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 15:06:02 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:06:02 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 15:06:02 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 15:06:02 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 15:09:27 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:09:27 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 15:09:27 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 15:09:27 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 15:09:28 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:09:28 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:09:28 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=?  | {SET} |
+2026-03-05 15:09:28 - [{"id":"20","group_name":"Hi","link":"hi"}] | {GET} |
+2026-03-05 15:09:28 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 15:09:28 - [{"id":"20"}] | {GET} |
+2026-03-05 15:11:02 - SELECT `group_name` FROM `groups` WHERE `id`=? | {SET} |
+2026-03-05 15:11:02 - {"group_name":"Hi","0":"Hi"} | {GET} |
+2026-03-05 15:11:02 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:11:02 - {"groups_id":"[\"20\"]","0":"[\"20\"]"} | {GET} |
+2026-03-05 15:11:02 - UPDATE `users_affinities` SET `groups_id`=:f WHERE `user_id`=:s | {SET} |
+2026-03-05 15:11:02 - SELECT `id`, `text`, `file`, `user_id` FROM `notes` WHERE (`user_id`=:f AND `to_whom`=:s) OR (`user_id`=:a AND `to_whom`=:b) | {SET} |
+2026-03-05 15:11:02 - [] | {GET} |
+2026-03-05 15:11:05 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:11:05 - {"groups_id":"[\"20\", \"20-g\"]","0":"[\"20\", \"20-g\"]"} | {GET} |
+2026-03-05 15:11:05 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=? OR `id`=? | {SET} |
+2026-03-05 15:11:05 - [{"id":"20","group_name":"Hi","link":"hi"}] | {GET} |
+2026-03-05 15:11:05 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 15:11:05 - [{"id":"20"}] | {GET} |
+2026-03-05 15:11:06 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:11:06 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 15:11:06 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 15:11:06 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 15:11:08 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:11:08 - {"groups_id":"[\"20\", \"20-g\"]","0":"[\"20\", \"20-g\"]"} | {GET} |
+2026-03-05 15:11:08 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=? OR `id`=? | {SET} |
+2026-03-05 15:11:08 - [{"id":"20","group_name":"Hi","link":"hi"}] | {GET} |
+2026-03-05 15:11:08 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 15:11:08 - [{"id":"20"}] | {GET} |
+2026-03-05 15:11:22 - SELECT `channels_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:11:22 - {"channels_id":null,"0":null} | {GET} |
+2026-03-05 15:11:22 - SELECT `id` FROM `channels` WHERE `author_id`=? | {SET} |
+2026-03-05 15:11:22 - [] | {GET} |
+2026-03-05 15:11:27 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:11:27 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 15:11:27 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 15:11:27 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 15:26:46 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:26:46 - {"groups_id":"[\"20\", \"20-g\"]","0":"[\"20\", \"20-g\"]"} | {GET} |
+2026-03-05 15:26:46 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=? OR `id`=? | {SET} |
+2026-03-05 15:26:46 - [{"id":"20","group_name":"Hi","link":"hi"}] | {GET} |
+2026-03-05 15:26:46 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 15:26:46 - [{"id":"20"}] | {GET} |
+2026-03-05 15:26:47 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:26:47 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 15:26:47 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 15:26:47 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 15:29:19 - SELECT `groups_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 15:29:19 - {"groups_id":"[\"20\", \"20-g\"]","0":"[\"20\", \"20-g\"]"} | {GET} |
+2026-03-05 15:29:19 - SELECT `id`, `group_name`, link FROM `groups` WHERE `id`=? OR `id`=? | {SET} |
+2026-03-05 15:29:19 - [{"id":"20","group_name":"Hi","link":"hi"}] | {GET} |
+2026-03-05 15:29:19 - SELECT `id` FROM `groups` WHERE `author_id`=? | {SET} |
+2026-03-05 15:29:19 - [{"id":"20"}] | {GET} |
+2026-03-05 16:04:41 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 16:04:41 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 16:04:41 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 16:04:41 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
+2026-03-05 16:05:58 - SELECT `users_id` FROM `users_affinities` WHERE `user_id`=? | {SET} |
+2026-03-05 16:05:58 - {"users_id":"[\"2\"]","0":"[\"2\"]"} | {GET} |
+2026-03-05 16:05:58 - SELECT `id`, `name`, `tel` FROM `users` WHERE `id`=?  | {SET} |
+2026-03-05 16:05:58 - [{"id":"2","name":"Dilshod","tel":"+998933334455"}] | {GET} |
