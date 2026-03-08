@@ -1,45 +1,65 @@
 <?php
 include 'texnic/conn.php';
+include 'functions/chek_inputs.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $data['name'] = $_POST['name'];
-    $data['tel'] = $_POST['tel'];
-    $data['yosh'] = $_POST['yosh'];
-    $data['millat'] = $_POST['millat'];
-    $data['jins'] = $_POST['jins'];
-    $other = ['davlat'=>$_POST['davlat'], 'viloyat'=>$_POST['viloyat'], 'tuman'=>$_POST['tuman'], 'mfy'=>$_POST['mfy'], 'kocha'=>$_POST['kocha']];
-    $data['other'] = json_encode($other);
-    $len = strlen((string)$data['tel']);
-    if ($len == 9) {
-        $data['tel'] = "+998".$data['tel'];
-    }
-    elseif ($len == 13) {}
-    else {
-        die('error');
-    }
+    $chek_inputs = new Chek_inputs($_POST);
 
-    print_r($data);
-    if (!in_array(null, $data)) {
-        $query = "INSERT INTO `users`(`name`, `yosh`, `tel`, `millat`, `jins`, `other`) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute([$data['name'], $data['yosh'], $data['tel'], $data['millat'], $data['jins'], $data['other']]);
-        
-        $get_id = $pdo->prepare('SELECT `id` FROM `users` WHERE `tel`=?');
-        $get_id->execute([$data['tel']]);
-        $id = $get_id->fetch();
-        if ($id[0] != null) {
-            $add_aff = $pdo->prepare('INSERT INTO `users_affinities`(`user_id`) VALUES (?)');
-            $add_aff->execute([$id[0]]);
-            $_SESSION['my_id'] = $id[0];
-            header("Location: index.php");
-            exit;
-        }
+    $data['name'] = $chek_inputs->chek_name('name', 1);
+    $data['tel'] = $chek_inputs->chek_tel('tel', 2);
+    $data['yosh'] = $chek_inputs->chek_num_limit('yosh', 150, 7, 3);
+    $data['millat'] = $chek_inputs->chek_name("millat");
+    $data['jins'] = $chek_inputs->chek_chosen('jins', ['Erkak', 'Ayol']);
+    if ($_GET['other'] != null) {
+        $other = json_encode($_GET['other']);
     }
     else {
-        echo "Name is none";
+        $other = json_encode(['None']);
+    }
+    // $other = ['davlat'=>$_POST['davlat'], 'viloyat'=>$_POST['viloyat'], 'tuman'=>$_POST['tuman'], 'mfy'=>$_POST['mfy'], 'kocha'=>$_POST['kocha']];
+    // $data['other'] = json_encode($other);
+
+
+    // print_r($data);
+    $query = "INSERT INTO `users`(`name`, `yosh`, `tel`, `millat`, `jins`, `other`) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$data['name'], $data['yosh'], $data['tel'], $data['millat'], $data['jins'], $other]);
+    
+    $get_id = $pdo->prepare('SELECT `id` FROM `users` WHERE `tel`=?');
+    $get_id->execute([$data['tel']]);
+    $id = $get_id->fetch();
+    if ($id[0] != null) {
+        $add_aff = $pdo->prepare('INSERT INTO `users_affinities`(`user_id`) VALUES (?)');
+        $add_aff->execute([$id[0]]);
+        $_SESSION['my_id'] = $id[0];
+        header("Location: index.php");
+        exit;
+    }
+    else {
+        header("Location:".$_SERVER['PHP_SELF']."?err=4");
+        exit;
     }
 }
-
+elseif ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if ($_GET['err'] != null) {
+        $err = $_GET['err'];
+        if ($err == 1) {
+            echo "Mistake. Name error, you must write with only alphabet!";
+        }
+        elseif ($err == 2) {
+            echo "Mistake. Tel error, your number is mistake!";
+        }
+        elseif ($err == 3) {
+            echo "Mistake. Age error, you are very young or other!";
+        }
+        elseif ($err == 4) {
+            echo "Error. Your number was not saved in base!";
+        }
+        elseif ($err == -1) {
+            echo "Fatal Error. Unregistered error!";
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Qozozq">Qozoq</option>
             <option value="Qirgiz">Qirgiz</option>
         </select><br>
-        <label for="davlat">Davlat: </label>
+        <!-- <label for="davlat">Davlat: </label>
         <select name="davlat" id="davlat">
             <option value="Uzbekiston">Uzbekiston</option>
             <option value="Qozogiston">Qozogiston</option>
@@ -94,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <option value="Yangihayot">Yangihayot</option>
             <option value="Mustaqillik">Mustaqillik</option>
             <option value="Gulzor">Gulzor</option>
-        </select><br>
+        </select><br> -->
         <input type="submit" value="Login">
     </form>
     <a href="login.php">Back</a>

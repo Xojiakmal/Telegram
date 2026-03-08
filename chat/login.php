@@ -1,34 +1,42 @@
 <?php
+session_start();
 include 'texnic/conn.php';
 include 'functions/writetolog.php';
+include 'functions/chek_inputs.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $data['name'] = $_POST['name'];
-    $data['tel'] = $_POST['tel'];
-    $len = strlen((string)$data['tel']);
-    if ($len == 9) {
-        $data['tel'] = "+998".$data['tel'];
-    }
-    elseif ($len == 13) {}
-    else {
-        die('error');
-    }
+    $chek_inputs = new Chek_inputs($_POST);
 
-    if ($data['name'] != null) {
-        $query = "SELECT `id` FROM `users` WHERE `name`=? AND `tel`=?";
-        $stmt = $pdo->prepare($query);
-        writetolog($stmt, 'set');
-        $stmt->execute([$data['name'], $data['tel']]);
-        $id = $stmt->fetch();
-        writetolog($id, 'get');
-        if ($id[0] != null) {
-            $_SESSION['my_id'] = $id[0];
-            header("Location: index.php");
-            exit;
-        }
+    $data['name'] = $chek_inputs->chek_name('name', 1);
+    $data['tel'] = $chek_inputs->chek_tel('tel', 3);
+
+    $stmt = $pdo->prepare("SELECT `id` FROM `users` WHERE `name`=:na AND `tel`=:te");
+    writetolog($stmt, 'set');
+    $stmt->execute([':na'=>$data['name'], ':te'=>$data['tel']]);
+    $id = $stmt->fetch(PDO::FETCH_ASSOC);
+    writetolog($id, 'get');
+    if ($id['id'] != null) {
+        $_SESSION['my_id'] = $id['id'];
+        header("Location: index.php");
+        exit;
     }
     else {
-        echo "Name is none";
+        header("Location: login.php?err=2");
+        exit;
+    }
+}
+elseif ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if ($_GET['err'] != null) {
+        $err = $_GET['err'];
+        if ($err == 1) {
+            echo "Name is none";
+        }
+        elseif ($err == 2) {
+            echo 'Name is not in base or other';
+        }
+        elseif ($err == 3) {
+            echo 'Error in tel input';
+        }
     }
 }
 
